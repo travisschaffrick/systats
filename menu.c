@@ -1,3 +1,4 @@
+#include <locale.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
@@ -18,6 +19,7 @@ main() {
   char *options[] = {"CPU Info", "CPU Temp", "Memory Info", "Load Avg. Info", "Uptime"};
   int settings = 0;
 
+  setlocale(LC_ALL, "");
   initscr();
   keypad(stdscr, TRUE);  
   cbreak();
@@ -96,6 +98,8 @@ main() {
 
     wrefresh(loading);
 
+    delwin(loading);
+
     /*
      *   PROGRAM LOOP
      */
@@ -106,14 +110,29 @@ main() {
     struct cpu_usage prev = get_cpu_usage();
 
     while (1) {
-      int ch = getch();
-      if (ch == 'q') {
-        nodelay(stdscr, FALSE);
-        input = 0;
-        break;
+      int quit = 0;
+
+      for (int i = 0; i < 4; i++) {
+        usleep(250000);
+        int ch = getch();
+
+        if (ch == 'q') {
+          nodelay(stdscr, FALSE);
+          input = 0;
+          running = 0;
+          quit = 1;
+          break;
+        }
+
+        if (ch == 's') {
+          nodelay(stdscr, FALSE);
+          input = 0;
+          quit = 1;
+          break;
+        }
       }
 
-      wclear(display);
+      if (quit) break;
 
       struct cpu_usage curr = get_cpu_usage();
       struct sysinfo sys;
@@ -132,17 +151,14 @@ main() {
       sys.load_avg = get_la();
       sys.uptime = get_uptime();
 
-      // clear screen
-      wclear(display);
-
       sys.settings = settings;
 
-      ncurses_selected(display, 1, 12, sys);    
+      wclear(display);                       // clear
+      ncurses_selected(display, 1, 12, sys); // draw new frame 
+      wrefresh(display);                     // show it
 
-      wrefresh(display);
+      // update cpu
       prev = curr;
-
-      sleep(1);
     }
   }
   endwin();
