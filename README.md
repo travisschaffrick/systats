@@ -14,11 +14,23 @@ Monitor
 2. Compile
 3. Run
 
+## Taster:
+Menu:
+            Select Variables to Monitor
+            Press 's' to start!
 
+               [ ] CPU Info
+               [ ] CPU Temp
+               [ ] Memory Info
+               [ ] Load Avg. Info
+               [ ] Uptime
 
-I am new to GitHub and I have lots to say
+Running:
 
-I DONT GIVE A FUCK ABOUT THE FUCKING CODE! i just want to download this stupid fucking application and use it https://github.com/sherlock-project/sherlock#installation
+            'q' to quit | 's' to change settings
 
-WHY IS THERE CODE??? MAKE A FUCKING .EXE FILE AND GIVE IT TO ME. these dumbfucks think that everyone is a developer and understands code. well i am not and i don't understand it. I only know to download and install applications. SO WHY THE FUCK IS THERE CODE? make an EXE file and give it to me. STUPID FUCKING SMELLY NERDS
-
+            CPU Usage: 0.75%
+            CPU Temp: 27.00°C
+            Memory Usage: 5.22GiB/30.46GiB (17.15%)
+            Load Avg: 0.18 0.13 0.17
+            Uptime: 3 hours, 52 minutes, 4 seconds
