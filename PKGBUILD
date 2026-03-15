@@ -17,5 +17,5 @@ build() {
 
 package() {
     cd "$pkgname-$pkgver"
-    install -Dm755 sysinfo "$pkgdir/usr/bin/sysinfo"
+    install -Dm755 systats "$pkgdir/usr/bin/systats"
 }
