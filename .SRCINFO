@@ -9,6 +9,6 @@ pkgbase = systats
 	makedepends = make
 	depends = ncurses
 	source = systats-1.0.0.tar.gz::https://github.com/travisschaffrick/systats/archive/refs/tags/v1.0.0.tar.gz
-	sha256sums = 55a36887cbba17a11d721bc2b274ce5c7159621eafd5625a4e9df0970e7c83b9
+	sha256sums = cdc0ab03504253b089d94f69cc1de9997ff5c717a0424d58c0917fcf36f24461
 
 pkgname = systats
