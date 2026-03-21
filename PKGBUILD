@@ -8,7 +8,7 @@ license=('MIT')
 depends=('ncurses')
 makedepends=('gcc' 'make')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('55a36887cbba17a11d721bc2b274ce5c7159621eafd5625a4e9df0970e7c83b9')
+sha256sums=('cdc0ab03504253b089d94f69cc1de9997ff5c717a0424d58c0917fcf36f24461')
 
 build() {
     cd "$pkgname-$pkgver"
